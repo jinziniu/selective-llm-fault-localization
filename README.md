@@ -16,6 +16,9 @@ experiments and non-sensitive aggregate analyses.
 - `src/fl_localizer/`: shared indexing, prompting, evaluation, and model-client
   modules.
 - `docs/`: frozen Defects4J protocols and public experiment reports.
+- `docs/thesis_revision_summary_2026-08-20.md`: supervisor-facing summary of
+  the thesis restructuring, research-positioning changes, experimental
+  clarifications, and remaining claim boundaries.
 - `results/`: non-sensitive machine-readable summary tables and checksums.
 - `thesis/thesis.pdf`: the thesis PDF corresponding to this artifact snapshot.
 
@@ -70,4 +73,3 @@ recorded in the frozen protocols and run manifests under `docs/` and
 
 The final thesis citation and archival identifier will be added after the
 university submission record is available.
-
