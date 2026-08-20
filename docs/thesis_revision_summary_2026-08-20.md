@@ -1,119 +1,160 @@
-# Thesis Revision Summary
+# Revision Summary in Response to the Previous Supervisor Meeting
 
-**Author:** Ziniu Jin  
-**Date:** 20 August 2026  
+**Student:** Ziniu Jin<br>
+**Supervisor:** Ana Oprescu<br>
+**Date:** 20 August 2026<br>
 **Thesis:** *Selective Evidence-Aware LLM Fault Localization Across Benchmark and Real-World Repositories*
 
 ## Purpose
 
-This document summarizes the principal revisions made after the supervisor
-review of the earlier thesis draft. The revision focused on thesis structure,
-research positioning, comparison with related work, experimental
-traceability, and the boundaries of the empirical claims. It did not change
-the research topic from file-level fault localization or introduce claims of
-automatic repair, statement-level diagnosis, or unrestricted repository
-agents.
+This note summarizes how the current thesis responds to the main points raised
+in the previous supervisor meeting. It focuses only on the requested changes:
+the abstract, placement of the research questions, thesis structure, VU thesis
+format, related-work synthesis, research-gap matrix, state-of-the-art
+comparison, and the connection to Mythos and related agentic work.
 
-## Summary of Revisions
+## Meeting Requirements and Responses
 
-| Review concern | Revision made | Main thesis location |
-| --- | --- | --- |
-| Research questions appeared too late | The three research questions are now introduced in the Introduction, before the method and evaluation chapters. | Introduction, Research Questions |
-| The thesis structure was difficult to follow | Scope and task boundaries were moved into the Introduction, and the thesis now follows a problem-to-evidence sequence: Introduction, Background, Related Work, Design, Evaluation Setup, Results, Discussion, Threats to Validity, Reproducibility, and Conclusion. | Full thesis structure |
-| The related-work discussion did not expose a clear research gap | The review now uses a SEGRESS-style, Kitchenham-based synthesis and a research-gap matrix that maps method families, established evidence, remaining gaps, and the RQs they motivate. | Related Work |
-| State-of-the-art comparison was insufficient | The thesis now identifies direct experimental baselines, mechanism-level comparisons, qualitative positioning targets, and controlled ablations. It discusses recent retrieve-and-rerank and agentic systems, including SweRank, BLAgent, FaR-Loc, SieveFL, RGFL, AgentFL, LocAgent, SWE-agent, Agentless, Project Glasswing, and Mythos Preview. | Related Work and Discussion |
-| The novelty claim was too broad | The thesis no longer claims novelty for retrieval-augmented LLM reranking itself. Its contribution is framed as a controlled study of a non-oracle per-bug invocation gate that either requests one-shot reranking or retains deterministic retrieval fallback. | Introduction, Related Work, Discussion, Conclusion |
-| Benchmark and case-study evidence were presented too uniformly | Defects4J is treated as controlled benchmark evidence, AboutWork as a company bug-log case study, and Easy Finance as a retrospective git-history-derived case study. Their different evidence strengths are stated explicitly. | Introduction, Evaluation Setup, Results, Threats to Validity |
-| The selector was not reproducible enough | The design now defines the selector inputs, decision logic, dataset-specific configurations, frozen settings, false positives, and false negatives. | Design and Evaluation Setup |
-| Metric boundaries were inconsistent | Ranking comparisons now use a common MRR@10 boundary. The selected/unselected analysis verifies that fallback cases retain identical retrieval and final rankings. | Evaluation Setup, Results, Supplemental Statistical Analysis |
-| The accuracy-cost interpretation was incomplete | Retrieval-only, selective reranking, and full rerank-all are compared under matched candidate pools and evidence settings. The analysis reports gain retention, model requests, provider-reported tokens, runtime, selector coverage, and missed hard cases. | RQ2 Results |
-| Evidence quality was only discussed informally | A selected-case Closure ablation compares metadata-only, metadata plus retrieval reasons, and full evidence packages. The thesis treats this as a single-run diagnostic because hosted-model variation prevents a strong causal interpretation. | RQ2 Results and Threats to Validity |
-| Agentic and verifier variants lacked a controlled role | Agentic inspection and verifier reranking are now evaluated as RQ3 ablations rather than the main method. Their ranking results, model requests, tokens, runtime, and failure modes are compared with one-shot reranking. | RQ3 Results and Discussion |
-| The evaluation did not show enough cross-project context | The current experiments cover 275 unique usable Defects4J bugs across development and validation slices, including a frozen follow-up on 40 previously unused Compress bugs. The thesis still distinguishes the main Closure held-out slice from supporting Math and Compress evidence and does not present all 275 records as independent held-out validation. | Introduction, Evaluation Setup, Results, Threats to Validity |
-| Data leakage and private-data handling needed clarification | Repair diffs, changed-file labels, and post-fix source code are excluded from prediction. Easy Finance is identified as the sole retrospective query-provenance exception because its query text is derived from fixing-commit metadata. The private case-study API and publication boundaries are described explicitly. | Design, Evaluation Setup, Ethics and Data Handling, Threats to Validity |
-| Hosted-model settings were under-specified | The thesis records the DeepSeek model alias, access date, request format, known client settings, and the parameters that were not explicitly pinned. Provider-default thinking behavior and run-to-run variation are reported as reproducibility limitations. | Design, Reproducibility, Threats to Validity |
-| The artifact trail was local and difficult to inspect | A sanitized public reproducibility package now contains shared implementation modules, experiment scripts, frozen Defects4J protocols, non-sensitive result summaries, checksums, and the thesis PDF. | Reproducibility |
+The locations below refer to the current 20 August 2026 PDF. Section titles are
+the stable reference if later pagination changes.
 
-## Revised Research Questions
+| Requirement raised in the meeting | Status | Response in the current thesis | Where to verify |
+| --- | --- | --- | --- |
+| Make the abstract broader and less implementation-heavy. | **Completed** | The abstract now begins with the fault-localization problem and the accuracy--cost motivation. It summarizes the method family, evaluation scope, main finding, and limitations without reproducing detailed tables, parameter lists, or dataset-by-dataset results. | **Abstract, p. 1**, especially its opening problem statement and final interpretation paragraph. |
+| Present the research questions before explaining the methodology. | **Completed** | RQ1--RQ3 now appear in the Introduction. The design and evaluation chapters follow them and are organized around answering those questions. | **Section 1.2, Research Questions, p. 3**; compare with **Section 4, Design, p. 8** and **Section 5, Evaluation Setup, p. 11**. |
+| Restructure the thesis because the previous version was difficult to read. | **Completed** | The thesis now follows a conventional argument: Introduction, Background, Related Work, Design, Evaluation Setup, Results, Discussion, Threats to Validity, Reproducibility, and Conclusion. Scope and task boundaries were moved into the Introduction instead of remaining as a separate chapter between Related Work and Methodology. | **Contents, p. 1**; **Section 1.1, Task Definition and Scope, p. 3**; full chapter order in **Sections 1--10, pp. 3--26**. |
+| Use the thesis template provided for the VU/UvA Computer Science programme rather than the literature-study format. | **Completed** | The current source uses the VU/UvA thesis front matter and A4 layout. The literature-study document remains separate and is not used as the thesis template. | **Cover page** and the A4 thesis layout throughout the PDF. |
+| Compare the thesis with existing approaches and the state of the art. | **Completed** | Related Work now distinguishes direct baselines, mechanism-level comparison targets, qualitative positioning targets, and controlled ablations. The Discussion returns to the closest systems and explains what can and cannot be compared under the thesis's file-level protocol. | **Section 3.6, Selected State-of-the-Art Comparison Targets, p. 7**; **Section 5.3, Comparison Strategy, p. 12**; **Section 7.2, Implications for State-of-the-Art Comparison, p. 23**. |
+| Apply the SEGRESS/Kitchenham-style literature-synthesis procedure used in the earlier research study. | **Completed** | Related Work explicitly identifies the synthesis as SEGRESS-style and Kitchenham-based. Prior work is grouped into method families and compared by evidence requirements, localization granularity, evaluation setting, and compatibility with the thesis protocol. | **Section 3.7, State-of-the-Art Comparison and Research Gap Matrix, p. 7**, in the paragraphs immediately before the gap matrix. |
+| Build a matrix of research gaps. | **Completed** | The Related Work chapter contains a research-gap matrix that records what each method family establishes, what remains insufficiently evaluated, and which research question addresses that gap. | **Section 3.7, Research Gap Matrix, pp. 7--8**. |
+| Ensure that the identified gaps support the research questions. | **Completed** | The gap synthesis now leads directly to RQ1, RQ2, and RQ3: evaluation across benchmark and repository settings; the candidate/evidence/selection mechanisms behind the accuracy--cost trade-off; and controlled comparison of one-shot, agentic, and verifier reranking. | Closing paragraphs of **Section 3.7, pp. 7--8**, read together with **Section 1.2, p. 3**. |
+| Select relevant state-of-the-art work from Related Work for comparison. | **Completed** | The thesis identifies the closest retrieval-based, LLM-based, retrieve-and-rerank, and agentic systems. It uses numerical comparison only where the input boundary, output granularity, labels, and protocol are compatible; otherwise it provides an explicit mechanism-level or qualitative comparison instead of presenting incomparable published scores as a leaderboard. | Comparison table and explanation in **Section 3.6, p. 7**; comparison boundary in **Section 5.3, p. 12**; interpretation in **Section 7.2, p. 23**. |
+| Relate the work to Mythos and the broader tool-using model direction discussed in the meeting. | **Completed** | Project Glasswing and Mythos Preview are discussed in Related Work as practical evidence that frontier models are increasingly used for multi-step investigation, tool use, confirmation, and vulnerability discovery. The Discussion connects this direction to RQ3: the thesis tests whether additional controlled inspection or verifier passes improve file-level ranking under a bounded evidence setting. | **Section 3.4, Agentic Software Engineering Systems, p. 6**; **Section 3.6, p. 7**; and the agentic-systems paragraph in **Section 7.2, p. 23**. |
 
-The thesis is now organized around three questions:
+## 1. Abstract and Introduction
 
-1. To what extent does selective evidence-aware LLM reranking improve
-   file-level fault localization over retrieval-only baselines on benchmark
-   and real-world repository data?
-2. How do candidate recall, evidence quality, and non-oracle selection affect
-   the accuracy-cost trade-off of selective LLM reranking?
-3. How do controlled agentic inspection and verifier reranking compare with
-   one-shot LLM reranking in accuracy, cost, and failure modes?
+The revised abstract is intentionally broad. It first states why file-level
+fault localization matters, then introduces selective evidence-aware
+reranking as an accuracy--cost trade-off. It avoids presenting the abstract as
+an implementation summary.
 
-These questions define the thesis argument. RQ1 evaluates effectiveness under
-different evidence settings. RQ2 explains the mechanisms and costs behind the
-observed results. RQ3 tests whether additional model interaction improves the
-same bounded file-ranking task.
+The Introduction now contains:
 
-## Current Contribution Statement
+1. the problem and motivation;
+2. the file-level task and its boundaries;
+3. the three research questions;
+4. the contribution statement; and
+5. a concise description of the evaluation evidence and its limits.
 
-The thesis does not present retrieval plus LLM reranking as a new idea. Recent
-systems already establish retrieval-filtered, bounded, and evidence-aware LLM
-localization as an active research direction. The narrower contribution is an
-empirical evaluation of the routing decision: whether a non-oracle selector
-can preserve a useful part of rerank-all improvement while reducing model
-requests, token usage, and runtime by allowing some bugs to bypass the LLM and
-retain deterministic retrieval fallback.
+This ordering ensures that readers know what the thesis asks before they read
+the system design or experimental protocol.
 
-The matched comparisons also identify where this policy loses performance:
-the correct file may be absent from the candidate pool, the evidence package
-may omit or obscure the relevant signal, or the selector may leave a difficult
-case on the retrieval-only path.
+## 2. Thesis Structure
 
-## Evidence and Claim Boundaries
+The previous standalone *Overview and Scope* chapter has been removed. Its
+necessary content is now integrated into the Introduction, where the task,
+inputs, outputs, ground-truth role, and exclusions are first defined. The
+remaining chapters follow the research logic rather than the chronology of
+the implementation work:
 
-The revised thesis keeps the following limitations explicit:
+```text
+Introduction and RQs
+-> Background
+-> Related Work and Research Gaps
+-> Design
+-> Evaluation Setup
+-> Results by RQ
+-> Discussion and SOTA Positioning
+-> Threats to Validity
+-> Reproducibility
+-> Conclusion
+```
 
-- The main held-out benchmark evidence is the frozen Closure 61--100 slice;
-  Math and Compress provide supporting cross-project evidence.
-- The 275 Defects4J bugs are the total unique usable development and validation
-  coverage, not 275 independent held-out observations.
-- AboutWork and Easy Finance support feasibility in additional repository
-  settings, not broad industrial generalization.
-- Easy Finance is retrospective because its natural-language query is derived
-  from fixing-commit metadata.
-- Full rerank-all is more accurate than selective reranking under the evaluated
-  evidence package; selective reranking is therefore an accuracy-cost policy,
-  not the highest-accuracy configuration.
-- The evidence-package ablation is diagnostic and subject to hosted-model
-  variation.
-- Agentic and verifier results apply only to the bounded file-level settings
-  evaluated in the thesis and do not establish that agents are generally
-  ineffective.
-- The study does not claim automatic repair, root-cause proof, statement-level
-  localization, or full-Defects4J generalization.
+The Results chapter is organized directly by RQ1, RQ2, and RQ3, so the reader
+can trace each research question to the corresponding evidence and answer.
 
-## Reproducibility Package
+## 3. SEGRESS/Kitchenham Synthesis and Research-Gap Matrix
 
-The public package is available at:
+The Related Work chapter now applies the requested synthesis procedure rather
+than presenting papers as an unstructured list. It groups prior work into:
 
-<https://github.com/jinziniu/selective-llm-fault-localization>
+- information-retrieval-based bug localization;
+- traditional and learning-based fault localization;
+- LLM-based and retrieval-augmented fault localization;
+- adjacent LLM-based testing and vulnerability tasks;
+- agentic software-engineering and vulnerability-discovery systems; and
+- benchmark and real-repository evaluation.
 
-The thesis artifact snapshot is marked with the Git tag
-`thesis-artifact-v1.0`. Private repository snapshots, raw company bug records,
-prompt packages, and per-record company outputs are excluded. This boundary is
-intentional and matches the confidentiality statement in the thesis.
+For each family, the research-gap matrix records:
 
-## Recommended Review Path
+1. what existing work establishes;
+2. what remains insufficiently evaluated; and
+3. which thesis RQ follows from that gap.
 
-For a focused supervisor review, the most important parts are:
+This matrix provides the explicit link requested in the meeting: the RQs are
+not introduced independently of the literature, but are supported by the
+gaps derived from the structured synthesis.
 
-1. **Introduction:** final scope, RQs, contributions, and evidence hierarchy.
-2. **Related Work:** SEGRESS/Kitchenham synthesis, SOTA comparison, and the
-   research-gap matrix.
-3. **Design:** the retrieval-selector-rerank pipeline and non-oracle selector.
-4. **Evaluation Setup:** datasets, input boundaries, metrics, and no-leakage
-   protocol.
-5. **Results:** RQ1 effectiveness, RQ2 accuracy-cost mechanisms, and RQ3
-   agentic/verifier ablations.
-6. **Discussion and Threats to Validity:** novelty boundary, interpretation,
-   and limits of generalization.
-7. **Reproducibility:** public artifact, commands, manifests, and remaining
-   hosted-model limitations.
+## 4. State-of-the-Art Comparison
 
+The thesis now selects comparison targets according to compatibility rather
+than name recognition or published score alone. The closest retrieve-and-rank
+and agentic systems are discussed in the Related Work and Discussion chapters.
+The comparison distinguishes four roles:
+
+- **Direct experimental baselines:** methods that can be run with the same
+  file-level inputs, labels, and metric boundary.
+- **Mechanism-level comparisons:** related systems that use retrieval,
+  filtering, bounded candidates, reranking, or selective processing but differ
+  in model training, granularity, runtime evidence, or dataset.
+- **Qualitative positioning targets:** systems whose task is adjacent but whose
+  published scores are not directly comparable.
+- **Controlled ablations:** one-shot, agentic, and verifier variants evaluated
+  inside the thesis protocol.
+
+This avoids an invalid cross-paper leaderboard while still making the thesis's
+position relative to the state of the art explicit. The resulting claim is
+also narrower: the thesis does not claim novelty for retrieval plus LLM
+reranking. It studies the per-bug routing decision between one-shot reranking
+and deterministic retrieval fallback.
+
+## 5. Mythos, Glasswing, and RQ3
+
+The link to Mythos is now presented as part of the thesis motivation for
+studying controlled agentic behavior, not as an unrelated security example.
+Mythos Preview and Project Glasswing illustrate a broader movement toward
+models that use tools, gather evidence over multiple steps, and perform an
+additional confirmation or review stage before producing a result.
+
+The thesis translates that broader direction into a narrower and testable
+file-localization question. RQ3 compares:
+
+- one-shot evidence-aware reranking;
+- controlled agentic inspection; and
+- verifier reranking.
+
+The comparison examines accuracy, model use, runtime, and failure modes under
+the same bounded file-level setting. Mythos and Glasswing therefore provide
+practical motivation and a design relationship for the agentic/verifier
+comparison, while the thesis's own experiment remains file-level fault
+localization rather than vulnerability discovery.
+
+## Remaining Administrative Item
+
+The VU/UvA thesis layout is in use, but the final cover still requires the
+confirmed daily-supervisor and second-reader names if the programme requires
+those fields. This item is not marked as completed because the names are not
+currently available in the source.
+
+## Recommended Review Locations
+
+The meeting-related changes can be reviewed most efficiently in:
+
+1. **Abstract, p. 1:** broader problem/method/finding summary.
+2. **Sections 1.1--1.2, p. 3:** scope and RQ1--RQ3 before methodology.
+3. **Sections 3.4, 3.6, and 3.7, pp. 6--8:** Mythos/Glasswing context,
+   selected SOTA targets, SEGRESS/Kitchenham synthesis, and the research-gap
+   matrix.
+4. **Sections 6.1--6.3, pp. 15--21:** evidence organized by RQ1, RQ2, and RQ3.
+5. **Section 7.2, p. 23:** final SOTA positioning and interpretation of the
+   agentic/verifier comparison.

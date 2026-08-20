@@ -16,9 +16,10 @@ experiments and non-sensitive aggregate analyses.
 - `src/fl_localizer/`: shared indexing, prompting, evaluation, and model-client
   modules.
 - `docs/`: frozen Defects4J protocols and public experiment reports.
-- `docs/thesis_revision_summary_2026-08-20.md`: supervisor-facing summary of
-  the thesis restructuring, research-positioning changes, experimental
-  clarifications, and remaining claim boundaries.
+- `docs/thesis_revision_summary_2026-08-20.md`: point-by-point response to the
+  requirements raised in the previous supervisor meeting, including thesis
+  structure, RQ placement, SEGRESS/Kitchenham synthesis, SOTA comparison, and
+  the Mythos/Glasswing connection.
 - `results/`: non-sensitive machine-readable summary tables and checksums.
 - `thesis/thesis.pdf`: the thesis PDF corresponding to this artifact snapshot.
 
