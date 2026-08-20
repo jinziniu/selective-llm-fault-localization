@@ -1,0 +1,49 @@
+{
+  "rows": [
+    {
+      "baseline_method": "retrieval_top10",
+      "baseline_mrr": 0.8888888888888888,
+      "baseline_top_1": 0.8333333333333334,
+      "baseline_top_10": 1.0,
+      "baseline_top_3": 1.0,
+      "baseline_top_5": 1.0,
+      "dataset": "compress_frozen_1_40",
+      "dataset_display_name": "Compress 1--40",
+      "final_method": "selective_rerank",
+      "final_mrr": 1.0,
+      "final_top_1": 1.0,
+      "final_top_10": 1.0,
+      "final_top_3": 1.0,
+      "final_top_5": 1.0,
+      "n": 6,
+      "subset": "selected"
+    },
+    {
+      "baseline_method": "retrieval_top10",
+      "baseline_mrr": 0.8194444444444444,
+      "baseline_top_1": 0.7352941176470589,
+      "baseline_top_10": 0.9705882352941176,
+      "baseline_top_3": 0.9117647058823529,
+      "baseline_top_5": 0.9411764705882353,
+      "dataset": "compress_frozen_1_40",
+      "dataset_display_name": "Compress 1--40",
+      "final_method": "selective_rerank",
+      "final_mrr": 0.8194444444444444,
+      "final_top_1": 0.7352941176470589,
+      "final_top_10": 0.9705882352941176,
+      "final_top_3": 0.9117647058823529,
+      "final_top_5": 0.9411764705882353,
+      "n": 34,
+      "subset": "unselected"
+    }
+  ],
+  "selector_false_negatives": [
+    {
+      "baseline_rank": null,
+      "bug_id": "Compress-35",
+      "dataset": "compress_frozen_1_40",
+      "final_rank": null,
+      "ground_truth_files": "src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java"
+    }
+  ]
+}

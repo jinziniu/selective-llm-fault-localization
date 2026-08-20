@@ -1,0 +1,6 @@
+dataset,selected_n,improved_cases,degraded_cases,unchanged_cases,mean_drr,positive_rr_changes,negative_rr_changes,zero_rr_changes,top_5_improved_cases,top_5_degraded_cases,top_10_improved_cases,top_10_degraded_cases,notes
+Closure-61..100,11,9,1,1,0.5416666666666666,9,1,1,6,0,5,0,Closure-82:RR 1.0000->0.5000
+Math-21..40,3,2,0,1,0.5,2,0,1,1,0,1,0,
+AboutWork-60,16,9,0,7,0.42752976190476194,9,0,7,3,0,2,0,
+Easy Finance clean63,10,10,0,0,0.6815476190476191,10,0,0,8,0,8,0,
+Mockito-31..38,4,4,0,0,0.8392857142857143,4,0,0,2,0,1,0,

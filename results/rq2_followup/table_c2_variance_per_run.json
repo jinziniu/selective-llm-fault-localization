@@ -1,0 +1,80 @@
+[
+  {
+    "invalid_json_count": 0,
+    "llm_calls": 11,
+    "mrr": 0.6513157894736842,
+    "notes": "original reported run",
+    "run_id": "original",
+    "runtime": 178.83800000000002,
+    "tokens": 408568,
+    "top_1": 0.5526315789473685,
+    "top_10": 0.8421052631578947,
+    "top_3": 0.7105263157894737,
+    "top_5": 0.7631578947368421
+  },
+  {
+    "invalid_json_count": 0,
+    "llm_calls": 11,
+    "mrr": 0.6425438596491229,
+    "notes": "follow-up repeated run",
+    "run_id": "run1",
+    "runtime": 238.58900000000003,
+    "tokens": 414621,
+    "top_1": 0.5526315789473685,
+    "top_10": 0.8421052631578947,
+    "top_3": 0.7105263157894737,
+    "top_5": 0.7631578947368421
+  },
+  {
+    "invalid_json_count": 0,
+    "llm_calls": 11,
+    "mrr": 0.6236842105263157,
+    "notes": "follow-up repeated run",
+    "run_id": "run2",
+    "runtime": 238.377,
+    "tokens": 413333,
+    "top_1": 0.5263157894736842,
+    "top_10": 0.8421052631578947,
+    "top_3": 0.6578947368421053,
+    "top_5": 0.7631578947368421
+  },
+  {
+    "invalid_json_count": 0,
+    "llm_calls": 11,
+    "mrr": 0.6337719298245613,
+    "notes": "follow-up repeated run",
+    "run_id": "run3",
+    "runtime": 257.675,
+    "tokens": 415820,
+    "top_1": 0.5263157894736842,
+    "top_10": 0.8421052631578947,
+    "top_3": 0.7105263157894737,
+    "top_5": 0.7631578947368421
+  },
+  {
+    "invalid_json_count": 0,
+    "llm_calls": 11,
+    "mrr": 0.6644736842105263,
+    "notes": "follow-up repeated run",
+    "run_id": "run4",
+    "runtime": 221.374,
+    "tokens": 412649,
+    "top_1": 0.5789473684210527,
+    "top_10": 0.8421052631578947,
+    "top_3": 0.7105263157894737,
+    "top_5": 0.7631578947368421
+  },
+  {
+    "invalid_json_count": 0,
+    "llm_calls": 11,
+    "mrr": 0.6271929824561403,
+    "notes": "follow-up repeated run",
+    "run_id": "run5",
+    "runtime": 226.8,
+    "tokens": 413309,
+    "top_1": 0.5263157894736842,
+    "top_10": 0.8421052631578947,
+    "top_3": 0.6578947368421053,
+    "top_5": 0.7368421052631579
+  }
+]

@@ -1,0 +1,143 @@
+{
+  "baseline": {
+    "all_38": {
+      "bugs": 38,
+      "mrr": 0.49451754385964913,
+      "top_10_accuracy": 0.7105263157894737,
+      "top_1_accuracy": 0.39473684210526316,
+      "top_3_accuracy": 0.5263157894736842,
+      "top_5_accuracy": 0.6052631578947368
+    },
+    "selected_11": {
+      "bugs": 11,
+      "mrr": 0.3068181818181818,
+      "top_10_accuracy": 0.5454545454545454,
+      "top_1_accuracy": 0.18181818181818182,
+      "top_3_accuracy": 0.36363636363636365,
+      "top_5_accuracy": 0.45454545454545453
+    }
+  },
+  "selected_bug_ids": [
+    "Closure-100",
+    "Closure-64",
+    "Closure-69",
+    "Closure-70",
+    "Closure-72",
+    "Closure-76",
+    "Closure-77",
+    "Closure-82",
+    "Closure-83",
+    "Closure-91",
+    "Closure-95"
+  ],
+  "variants": {
+    "full_evidence": {
+      "all_38": {
+        "bugs": 38,
+        "mrr": 0.6127192982456141,
+        "top_10_accuracy": 0.8421052631578947,
+        "top_1_accuracy": 0.5,
+        "top_3_accuracy": 0.6842105263157895,
+        "top_5_accuracy": 0.7631578947368421
+      },
+      "detail": "Current thesis evidence package: retrieval evidence, selected source snippets, and triggering-test source context.",
+      "eval_path": "outputs/rq2_evidence_ablation_2026_07_20/closure_61_100_full_evidence_merged_eval.json",
+      "label": "Full evidence package",
+      "merged_path": "outputs/rq2_evidence_ablation_2026_07_20/closure_61_100_full_evidence_merged.jsonl",
+      "rerank_paths": [
+        "outputs/rq2_evidence_ablation_2026_07_20/closure_61_80_full_evidence_deepseek.jsonl",
+        "outputs/rq2_evidence_ablation_2026_07_20/closure_81_100_full_evidence_deepseek.jsonl"
+      ],
+      "selected_11": {
+        "bugs": 11,
+        "mrr": 0.7151515151515151,
+        "top_10_accuracy": 1.0,
+        "top_1_accuracy": 0.5454545454545454,
+        "top_3_accuracy": 0.9090909090909091,
+        "top_5_accuracy": 1.0
+      },
+      "selected_eval_path": "outputs/rq2_evidence_ablation_2026_07_20/closure_61_100_full_evidence_selected_eval.json",
+      "usage": {
+        "completion_tokens": 20453,
+        "duration_seconds": 201.042,
+        "model_requests": 11,
+        "prompt_tokens": 388832,
+        "seconds_per_selected_case": 18.3,
+        "tokens_per_selected_case": 37207.7,
+        "total_tokens": 409285
+      }
+    },
+    "metadata_only": {
+      "all_38": {
+        "bugs": 38,
+        "mrr": 0.6030701754385965,
+        "top_10_accuracy": 0.8421052631578947,
+        "top_1_accuracy": 0.47368421052631576,
+        "top_3_accuracy": 0.7105263157894737,
+        "top_5_accuracy": 0.7631578947368421
+      },
+      "detail": "Candidate paths, ranks/scores, packages, class names, and method names; no retrieval reasons, no source snippets, no triggering-test source context.",
+      "eval_path": "outputs/rq2_evidence_ablation_2026_07_20/closure_61_100_metadata_only_merged_eval.json",
+      "label": "Metadata only",
+      "merged_path": "outputs/rq2_evidence_ablation_2026_07_20/closure_61_100_metadata_only_merged.jsonl",
+      "rerank_paths": [
+        "outputs/rq2_evidence_ablation_2026_07_20/closure_61_80_metadata_only_deepseek.jsonl",
+        "outputs/rq2_evidence_ablation_2026_07_20/closure_81_100_metadata_only_deepseek.jsonl"
+      ],
+      "selected_11": {
+        "bugs": 11,
+        "mrr": 0.6818181818181818,
+        "top_10_accuracy": 1.0,
+        "top_1_accuracy": 0.45454545454545453,
+        "top_3_accuracy": 1.0,
+        "top_5_accuracy": 1.0
+      },
+      "selected_eval_path": "outputs/rq2_evidence_ablation_2026_07_20/closure_61_100_metadata_only_selected_eval.json",
+      "usage": {
+        "completion_tokens": 15589,
+        "duration_seconds": 140.615,
+        "model_requests": 11,
+        "prompt_tokens": 185486,
+        "seconds_per_selected_case": 12.8,
+        "tokens_per_selected_case": 18279.5,
+        "total_tokens": 201075
+      }
+    },
+    "metadata_retrieval": {
+      "all_38": {
+        "bugs": 38,
+        "mrr": 0.6214912280701754,
+        "top_10_accuracy": 0.8421052631578947,
+        "top_1_accuracy": 0.5263157894736842,
+        "top_3_accuracy": 0.6842105263157895,
+        "top_5_accuracy": 0.7631578947368421
+      },
+      "detail": "Metadata-only candidate package plus retrieval evidence fields and deterministic retrieval reasons; no source snippets or triggering-test source context.",
+      "eval_path": "outputs/rq2_evidence_ablation_2026_07_20/closure_61_100_metadata_retrieval_merged_eval.json",
+      "label": "Metadata + retrieval reasons",
+      "merged_path": "outputs/rq2_evidence_ablation_2026_07_20/closure_61_100_metadata_retrieval_merged.jsonl",
+      "rerank_paths": [
+        "outputs/rq2_evidence_ablation_2026_07_20/closure_61_80_metadata_retrieval_deepseek.jsonl",
+        "outputs/rq2_evidence_ablation_2026_07_20/closure_81_100_metadata_retrieval_deepseek.jsonl"
+      ],
+      "selected_11": {
+        "bugs": 11,
+        "mrr": 0.7454545454545454,
+        "top_10_accuracy": 1.0,
+        "top_1_accuracy": 0.6363636363636364,
+        "top_3_accuracy": 0.9090909090909091,
+        "top_5_accuracy": 1.0
+      },
+      "selected_eval_path": "outputs/rq2_evidence_ablation_2026_07_20/closure_61_100_metadata_retrieval_selected_eval.json",
+      "usage": {
+        "completion_tokens": 18720,
+        "duration_seconds": 180.06,
+        "model_requests": 11,
+        "prompt_tokens": 271416,
+        "seconds_per_selected_case": 16.4,
+        "tokens_per_selected_case": 26376.0,
+        "total_tokens": 290136
+      }
+    }
+  }
+}

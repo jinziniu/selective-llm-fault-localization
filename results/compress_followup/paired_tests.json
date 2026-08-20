@@ -1,0 +1,63 @@
+{
+  "rows": [
+    {
+      "comparison": "retrieval_vs_selective",
+      "dataset": "compress_frozen_1_40",
+      "dataset_display_name": "Compress 1--40",
+      "mean_delta_rr": 0.01666666666666667,
+      "median_delta_rr": 0.0,
+      "n": 40,
+      "n_negative_delta": 0,
+      "n_positive_delta": 1,
+      "n_zero_delta": 39,
+      "p_value": 0.3173105078629141,
+      "test": "wilcoxon_rr",
+      "w_statistic": 0,
+      "wilcoxon_method": "normal_approx_no_tie_correction"
+    },
+    {
+      "b_baseline_miss_method_hit": 1,
+      "c_baseline_hit_method_miss": 0,
+      "comparison": "retrieval_vs_selective",
+      "dataset": "compress_frozen_1_40",
+      "dataset_display_name": "Compress 1--40",
+      "discordant": 1,
+      "n": 40,
+      "p_value": 1.0,
+      "test": "mcnemar_top_1"
+    },
+    {
+      "b_baseline_miss_method_hit": 0,
+      "c_baseline_hit_method_miss": 0,
+      "comparison": "retrieval_vs_selective",
+      "dataset": "compress_frozen_1_40",
+      "dataset_display_name": "Compress 1--40",
+      "discordant": 0,
+      "n": 40,
+      "p_value": 1.0,
+      "test": "mcnemar_top_3"
+    },
+    {
+      "b_baseline_miss_method_hit": 0,
+      "c_baseline_hit_method_miss": 0,
+      "comparison": "retrieval_vs_selective",
+      "dataset": "compress_frozen_1_40",
+      "dataset_display_name": "Compress 1--40",
+      "discordant": 0,
+      "n": 40,
+      "p_value": 1.0,
+      "test": "mcnemar_top_5"
+    },
+    {
+      "b_baseline_miss_method_hit": 0,
+      "c_baseline_hit_method_miss": 0,
+      "comparison": "retrieval_vs_selective",
+      "dataset": "compress_frozen_1_40",
+      "dataset_display_name": "Compress 1--40",
+      "discordant": 0,
+      "n": 40,
+      "p_value": 1.0,
+      "test": "mcnemar_top_10"
+    }
+  ]
+}

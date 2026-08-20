@@ -1,0 +1,14 @@
+.env
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Generated or private experiment material
+data/
+outputs/
+prompts/
+workspaces/
+

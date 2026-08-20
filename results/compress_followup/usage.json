@@ -1,0 +1,15 @@
+{
+  "avg_completion_tokens": 11014.0,
+  "avg_duration_seconds": 97.405,
+  "avg_prompt_cache_hit_tokens": 4778.67,
+  "avg_prompt_cache_miss_tokens": 25384.33,
+  "avg_prompt_tokens": 30163.0,
+  "avg_total_tokens": 41177.0,
+  "records": 6,
+  "total_completion_tokens": 66084,
+  "total_duration_seconds": 584.431,
+  "total_prompt_cache_hit_tokens": 28672,
+  "total_prompt_cache_miss_tokens": 152306,
+  "total_prompt_tokens": 180978,
+  "total_tokens": 247062
+}

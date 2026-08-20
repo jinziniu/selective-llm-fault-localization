@@ -1,0 +1,2 @@
+dataset,dataset_display_name,method,method_display_name,n,max_depth,base_method,top100_method,hits_at_10,recall_at_10,hits_at_20,recall_at_20,hits_at_50,recall_at_50,hits_at_100,recall_at_100,marginal_50_to_100
+compress_frozen_1_40,Compress 1--40,retrieval_top100,Retrieval Top-100,40,100,retrieval_top50,retrieval_top100,39,0.975,39,0.975,40,1.0,40,1.0,0.0

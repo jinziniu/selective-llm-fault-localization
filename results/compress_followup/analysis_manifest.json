@@ -1,0 +1,54 @@
+{
+  "datasets": [
+    {
+      "bugs": [
+        "data/defects4j/compress_frozen_1_40.jsonl"
+      ],
+      "comparisons": [
+        {
+          "baseline": "retrieval_top10",
+          "method": "selective_rerank",
+          "name": "retrieval_vs_selective"
+        }
+      ],
+      "display_name": "Compress 1--40",
+      "methods": [
+        {
+          "display_name": "Retrieval",
+          "name": "retrieval_top10",
+          "paths": [
+            "outputs/compress_frozen_1_40_hybrid_focused_direct_top10_eval_boundary.jsonl"
+          ],
+          "role": "baseline"
+        },
+        {
+          "display_name": "Selective rerank",
+          "name": "selective_rerank",
+          "paths": [
+            "outputs/compress_frozen_1_40_merged_deepseek_generic_t102_h7_patterns_s12_ctx12000_top50.jsonl"
+          ],
+          "role": "main"
+        }
+      ],
+      "name": "compress_frozen_1_40",
+      "recall_variants": [
+        {
+          "display_name": "Retrieval Top-100",
+          "name": "retrieval_top100",
+          "paths": [
+            "outputs/compress_frozen_1_40_hybrid_focused_direct_top100.jsonl"
+          ]
+        }
+      ],
+      "retrieval_methods": [
+        "retrieval_top10"
+      ],
+      "selection": [
+        "outputs/compress_frozen_1_40_selector_generic_t102_h7_patterns.json"
+      ],
+      "subset_baseline": "retrieval_top10",
+      "subset_final": "selective_rerank"
+    }
+  ],
+  "generated_at": "2026-08-11"
+}

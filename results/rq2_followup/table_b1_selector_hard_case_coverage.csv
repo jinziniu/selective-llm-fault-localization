@@ -1,0 +1,7 @@
+dataset,n,total_selected,selected_fraction,baseline_top_1_failures,baseline_top_5_failures,baseline_top_10_failures,selected_among_top_5_failures,selected_among_top_10_failures,selector_recall_on_top_5_failures,selector_recall_on_top_10_failures,unselected_top_5_failures_remaining,unselected_top_10_failures_remaining
+Closure-61..100,38,11,0.2894736842105263,23,15,11,6,5,0.4,0.45454545454545453,9,6
+Math-21..40,20,3,0.15,6,1,1,1,1,1.0,1.0,0,0
+AboutWork-60,60,16,0.26666666666666666,26,5,4,3,2,0.6,0.5,2,2
+Easy Finance clean63,63,10,0.15873015873015872,38,9,8,9,8,1.0,1.0,0,0
+Mockito-21..30,9,4,0.4444444444444444,5,4,3,2,2,0.5,0.6666666666666666,2,1
+Mockito-31..38,8,4,0.5,7,2,1,2,1,1.0,1.0,0,0

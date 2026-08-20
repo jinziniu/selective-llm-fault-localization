@@ -1,0 +1,3 @@
+dataset,dataset_display_name,subset,n,baseline_method,final_method,baseline_top_1,baseline_top_3,baseline_top_5,baseline_top_10,baseline_mrr,final_top_1,final_top_3,final_top_5,final_top_10,final_mrr
+compress_frozen_1_40,Compress 1--40,selected,6,retrieval_top10,selective_rerank,0.8333333333333334,1.0,1.0,1.0,0.8888888888888888,1.0,1.0,1.0,1.0,1.0
+compress_frozen_1_40,Compress 1--40,unselected,34,retrieval_top10,selective_rerank,0.7352941176470589,0.9117647058823529,0.9411764705882353,0.9705882352941176,0.8194444444444444,0.7352941176470589,0.9117647058823529,0.9411764705882353,0.9705882352941176,0.8194444444444444

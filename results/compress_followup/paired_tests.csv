@@ -1,0 +1,6 @@
+dataset,dataset_display_name,comparison,test,n,p_value,w_statistic,wilcoxon_method,mean_delta_rr,median_delta_rr,n_positive_delta,n_negative_delta,n_zero_delta,b_baseline_miss_method_hit,c_baseline_hit_method_miss,discordant
+compress_frozen_1_40,Compress 1--40,retrieval_vs_selective,wilcoxon_rr,40,0.3173105078629141,0,normal_approx_no_tie_correction,0.01666666666666667,0.0,1,0,39,,,
+compress_frozen_1_40,Compress 1--40,retrieval_vs_selective,mcnemar_top_1,40,1.0,,,,,,,,1,0,1
+compress_frozen_1_40,Compress 1--40,retrieval_vs_selective,mcnemar_top_3,40,1.0,,,,,,,,0,0,0
+compress_frozen_1_40,Compress 1--40,retrieval_vs_selective,mcnemar_top_5,40,1.0,,,,,,,,0,0,0
+compress_frozen_1_40,Compress 1--40,retrieval_vs_selective,mcnemar_top_10,40,1.0,,,,,,,,0,0,0

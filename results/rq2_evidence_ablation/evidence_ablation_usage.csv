@@ -1,0 +1,4 @@
+variant,label,model_requests,total_tokens,prompt_tokens,completion_tokens,duration_seconds,tokens_per_selected_case,seconds_per_selected_case
+metadata_only,Metadata only,11,201075,185486,15589,140.615,18279.5,12.8
+metadata_retrieval,Metadata + retrieval reasons,11,290136,271416,18720,180.06,26376.0,16.4
+full_evidence,Full evidence package,11,409285,388832,20453,201.042,37207.7,18.3
